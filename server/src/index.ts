@@ -79,7 +79,7 @@ export interface StartedServer {
 }
 
 export async function startServer(): Promise<StartedServer> {
-  let config = loadConfig();
+  const config = loadConfig();
   initTelemetry({ enabled: config.telemetryEnabled });
   if (process.env.PAPERCLIP_SECRETS_PROVIDER === undefined) {
     process.env.PAPERCLIP_SECRETS_PROVIDER = config.secretsProvider;

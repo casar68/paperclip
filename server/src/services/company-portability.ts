@@ -3287,7 +3287,7 @@ export function companyPortabilityService(db: Db, storage?: StorageService) {
       { preserveEmptyStrings: true },
     );
 
-    let finalFiles = filterExportFiles(files, input.selectedFiles, paperclipExtensionPath);
+    const finalFiles = filterExportFiles(files, input.selectedFiles, paperclipExtensionPath);
     let resolved = buildManifestFromPackageFiles(finalFiles, {
       sourceLabel: {
         companyId: company.id,

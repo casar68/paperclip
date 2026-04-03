@@ -996,7 +996,7 @@ async function readUrlSkillImports(
     const parsed = parseGitHubSourceUrl(url);
     const apiBase = gitHubApiBase(parsed.hostname);
     const { pinnedRef, trackingRef } = await resolveGitHubPinnedRef(parsed);
-    let ref = pinnedRef;
+    const ref = pinnedRef;
     const tree = await fetchJson<{ tree?: Array<{ path: string; type: string }> }>(
       `${apiBase}/repos/${parsed.owner}/${parsed.repo}/git/trees/${ref}?recursive=1`,
     ).catch(() => {

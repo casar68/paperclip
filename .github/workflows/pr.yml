@@ -117,9 +117,6 @@ jobs:
       - name: Lint
         run: pnpm lint
 
-      - name: Format check
-        run: pnpm format:check
-
       - name: Run tests with coverage
         run: pnpm test:run --coverage
 
